@@ -2,7 +2,9 @@
 
 # Projeto de Fractal de Mandelbrot usando Python e C
 
-Usando C e python para gerar e exibir o fractal de Mandelbrot.
+- Python: Interface gráfica
+- C: Cálculos matemáticos intensivos do fractal
+
 
 ## Arquivos no repositório
 
@@ -11,36 +13,60 @@ Usando C e python para gerar e exibir o fractal de Mandelbrot.
 - `main.py`: interface gráfica em Python usando Tkinter e PIL.
 - `Makefile`: para compilar a biblioteca compartilhada.
 - `documentacao.pdf`: documentação do projeto.
-   `README.md`.
+- `README.md`
 
 ## Requisitos
 
-- Python 3.x
-- PIL (Pillow) - para manipulação de imagens no Python
-- GCC (para compilar o código C)
+### Dependências
+- Python 3.8 ou superior
+- GCC (Linux/Mac) ou MinGW (Windows)
+- Biblioteca Pillow (Python Imaging Library)
 
-## Instalação das dependências
+### Instalação de Dependências
 
-No Ubuntu/Debian:
+#### Ubuntu/Debian: sudo apt-get update
+sudo apt-get install python3-tk python3-pil python3-pil.imagetk build-essential python3-dev
 
-```bash
-sudo apt-get install python3-tk python3-pil python3-pil.imagetk
+### Windows: Instale o Python 3.
 
-Obs: No Windows, é possível instalar o Python e depois o Pillow via pip.
+Instale o MinGW ou as Ferramentas de Compilação do Visual Studio.
 
-Compilação e execução
-Compilar a biblioteca C: make
-Isso gerará o arquivo libmandelbrot.so (no Linux) ou equivalente.
-Executar a aplicação: make run
+No terminal, instale a biblioteca de imagem: pip install pillow
 
-Ou, manualmente: python3 main.py
+Compile e execute:
 
-Como funciona
+make all        # Compila a biblioteca C e prepara o ambiente
+make executar   # Inicia a aplicação
 
-    O código em C (mandelbrot.c) contém a função mandelbrot que calcula o fractal e retorna um array de inteiros com o número de iterações para cada pixel.
+Ou use os comandos individuais:
 
-    O código em Python (main.py) usa ctypes para carregar a biblioteca compartilhada e chamar a função C.
+make compilar    # Compila modulo C
+make instalar    # Instala dependencias
+make executar    # Executa aplicacao
 
-    A interface gráfica em Tkinter exibe a imagem gerada a partir dos dados retornados pela função C.
+ou GCC: gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelbrot.so
 
-Documentação: Consulte o arquivo documentacao.pdf para mais detalhes sobre a implementação e a interface entre as linguagens.
+Rodar a aplicação : python3 main.py 
+# Executar interface: 
+python3 interface.py
+
+A aplicação abrirá uma janela exibindo o fractal. Você pode interagir da seguinte forma:
+
+    Zoom: Clique e arraste o mouse para selecionar uma área específica. O fractal será recalculado para essa nova região.
+
+    Slider de Iterações: Ajusta a precisão do cálculo (mais iterações = mais detalhe, porém mais processamento).
+
+    Botão "Redefinir": Retorna à visualização inicial (coordenadas padrão).
+
+    Botão "Calcular": Força a atualização com os parâmetros atuais do slider.
+
+Integracao Python-C:
+
+    O código C é compilado como uma Shared Library (.so no Linux ou .dll no Windows).
+
+    O Python utiliza a biblioteca ctypes para carregar esse binário.
+
+    Os parâmetros de coordenadas e iterações são passados do Python para structs em C, onde o cálculo pesado ocorre, devolvendo os dados de cores para a interface.
+
+
+
