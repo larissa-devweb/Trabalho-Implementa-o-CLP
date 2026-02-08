@@ -1,4 +1,4 @@
-# Trabalho-Implementacao-CLP
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/6c672be4-358a-41a2-ad11-322a68019146" /># Trabalho-Implementacao-CLP
 
 # Projeto de Fractal de Mandelbrot usando Python e C
 
@@ -88,3 +88,11 @@ OU
 
 gcc -m32 -shared mandelbrot.c -o mandelbrot.dll
 python teste_lib.py
+
+Não esqueça que, ao baixar novo python, precisa fazer no terminal :
+
+1. python -m pip install Pillow
+2. cd "caminho"
+3. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
+4. python main.py
+   
