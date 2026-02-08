@@ -59,6 +59,11 @@ Rodar a aplicação : python main.py
 A aplicação abrirá uma janela exibindo o fractal. Você pode interagir da seguinte forma:
 
     Zoom: Clique e arraste o mouse para selecionar uma área específica. O fractal será recalculado para essa nova região.
+    Como usar agora:
+    Clique Esquerdo: Centraliza e aproxima (Zoom In).
+    Clique Direito: Afasta a câmera (Zoom Out).
+    Dica de Performance: Quando você entrar muito fundo no fractal (Zoom alto), a imagem pode começar a ficar "lisa" ou com poucos detalhes. Quando isso acontecer, aumente o Slider de Iterações e clique novamente. Isso faz o C trabalhar mais para encontrar os detalhes escondidos
+    
     Slider de Iterações: Ajusta a precisão do cálculo (mais iterações = mais detalhe, porém mais processamento).
     Botão "Redefinir": Retorna à visualização inicial (coordenadas padrão).
     Botão "Calcular": Força a atualização com os parâmetros atuais do slider.
