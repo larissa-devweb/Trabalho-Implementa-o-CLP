@@ -1,5 +1,3 @@
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/6c672be4-358a-41a2-ad11-322a68019146" /># Trabalho-Implementacao-CLP
-
 # Projeto de Fractal de Mandelbrot usando Python e C
 
 - Python: Interface gráfica
@@ -96,3 +94,5 @@ Não esqueça que, ao baixar novo python, precisa fazer no terminal :
 3. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
 4. python main.py
    
+<img width="1200" height="700" alt="image" src="https://github.com/user-attachments/assets/6c672be4-358a-41a2-ad11-322a68019146" /># Trabalho-Implementacao-CLP
+
