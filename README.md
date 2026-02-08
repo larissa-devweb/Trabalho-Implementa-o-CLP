@@ -100,3 +100,6 @@ Não esqueça que, ao baixar novo python, precisa fazer no terminal :
 E, se aumentar a iteração:
 
 <img width="600" height="560" alt="image" src="https://github.com/user-attachments/assets/38ff30b4-23dc-420e-b5ad-abbb0e6c2ea1" />
+
+
+Se modificar o zoom:
