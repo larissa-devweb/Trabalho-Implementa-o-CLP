@@ -98,13 +98,8 @@ Não esqueça que, ao baixar novo python, precisa fazer no terminal :
 2. cd "caminho"
 3. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
 4. python main.py
-   
-<img width="600" height="560" alt="image" src="https://github.com/user-attachments/assets/797e5fdc-21fc-4c59-bd3d-54aeaa58ca2a" />
 
-
-E, se aumentar a iteração:
-
-<img width="600" height="560" alt="image" src="https://github.com/user-attachments/assets/38ff30b4-23dc-420e-b5ad-abbb0e6c2ea1" />
+Interface :
 
 
 Se modificar o zoom:
