@@ -1,7 +1,7 @@
 # Projeto de Fractal de Mandelbrot usando Python e C
 
 - Python: Interface gráfica
-- C: Cálculos matemáticos intensivos do fractal
+- C: Cálculos matemáticos do fractal
 
 
 ## Arquivos no repositório
@@ -10,7 +10,6 @@
 - `mandelbrot.c`: implementação em C do cálculo do fractal.
 - `main.py`: interface gráfica em Python usando Tkinter e PIL.
 - `Makefile`: para compilar a biblioteca compartilhada.
-- `documentacao.pdf`: documentação do projeto.
 - `README.md`
 
 ## Requisitos
@@ -19,6 +18,7 @@
 - Python 3.8 ou superior
 - GCC (Linux/Mac) ou MinGW (Windows)
 - Biblioteca Pillow (Python Imaging Library)
+- python compativel com GCC (ambos 64 bits ou 32 bits, o meu ambos sao 32 bits)
 
 ### Instalação de Dependências
 
@@ -31,30 +31,15 @@ Instale o MinGW ou as Ferramentas de Compilação do Visual Studio.
 
 No terminal, instale a biblioteca de imagem: pip install pillow
 
-Compile e execute:
+Compile e execulte:
 
-make all        # Compila a biblioteca C e prepara o ambiente
-make executar   # Inicia a aplicação
+1. cd " caminho.."
+2. gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelbrot.so
+3. python main.py
 
-Ou use os comandos individuais:
-
-make compilar    # Compila modulo C
-make instalar    # Instala dependencias
-make executar    # Executa aplicacao
-
-ou , COMO EU FAÇO, GCC: gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelbrot.so
-
-Eu coloquei no powershell o cd (caminho) e entao compilei o gcc e depois o python main.py
-Uma dica, se for recompilar, faça:
-
-# Apaga a DLL antiga se ela existir para não haver conflito
-del mandelbrot.dll
-
-# Compila a nova DLL (O motor do projeto)
+Uma dica, se for recompilar e der erro, faça:  Apaga a DLL antiga se ela existir para não haver conflito -> del mandelbrot.dll
 gcc -O3 -shared -fPIC mandelbrot.c -o mandelbrot.dll
-
-Rodar a aplicação : python main.py 
-
+ python main.py 
 
 A aplicação abrirá uma janela exibindo o fractal. Você pode interagir da seguinte forma:
 
@@ -77,12 +62,7 @@ Integracao Python-C:
 
 OBSERVAÇÃO: 
 
-Se tiver problema de não reconhecer caminho cd e/ou main.py, tente forçar a leitura de 64 bits ou 32 bits abaixo.
-Se , ainda sim, Se o GCC no power shell disser que não reconhece -m64 ou -m32, significa que o seu instalador do MinGW só suporta uma arquitetura. Nesse caso, você terá que baixar a versão do Python que combine com seu GCC: https://www.python.org/downloads/windows/
-
-DICA: para saber se seu pyhon é 64 ou 32: python -c "import struct; print(struct.calcsize('P') * 8)"
-
-forçar compilação: 
+Se tiver problema de não reconhecer caminho cd e/ou main.py, tente forçar a leitura de 64 bits ou 32 bits abaixo:
 
 gcc -m64 -shared mandelbrot.c -o mandelbrot.dll
 python teste_lib.py
@@ -92,12 +72,19 @@ OU
 gcc -m32 -shared mandelbrot.c -o mandelbrot.dll
 python teste_lib.py
 
+Se , ainda sim, Se o GCC disser que não reconhece -m64 ou -m32, significa que o seu instalador do MinGW só suporta uma arquitetura. Nesse caso, você terá que baixar a versão do Python que combine com seu GCC: https://www.python.org/downloads/windows/
+
+DICA: para saber se seu pyhon é 64 ou 32: python -c "import struct; print(struct.calcsize('P') * 8)"
+
+
 Não esqueça que, ao baixar novo python, precisa fazer no terminal :
 
 1. python -m pip install Pillow
 2. cd "caminho"
 3. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
 4. python main.py
+
+Imagens da miha compilação:
 
 Interface :
 
