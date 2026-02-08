@@ -72,4 +72,19 @@ Integracao Python-C:
     Os parâmetros de coordenadas e iterações são passados do Python para structs em C, onde o cálculo pesado ocorre, devolvendo os dados de cores para a interface.
 
 
+OBSERVAÇÃO: 
 
+Se tiver problema de não reconhecer caminho cd e/ou main.py, tente forçar a leitura de 64 bits ou 32 bits abaixo.
+Se , ainda sim, Se o GCC no power shell disser que não reconhece -m64 ou -m32, significa que o seu instalador do MinGW só suporta uma arquitetura. Nesse caso, você terá que baixar a versão do Python que combine com seu GCC: https://www.python.org/downloads/windows/
+
+DICA: para saber se seu pyhon é 64 ou 32: python -c "import struct; print(struct.calcsize('P') * 8)"
+
+forçar compilação: 
+
+gcc -m64 -shared mandelbrot.c -o mandelbrot.dll
+python teste_lib.py
+
+OU 
+
+gcc -m32 -shared mandelbrot.c -o mandelbrot.dll
+python teste_lib.py
