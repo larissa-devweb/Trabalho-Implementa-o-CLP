@@ -94,7 +94,7 @@ Não esqueça que, ao baixar novo python, precisa fazer no terminal :
 3. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
 4. python main.py
    
-<img width="1000" height="670" alt="image" src="https://github.com/user-attachments/assets/797e5fdc-21fc-4c59-bd3d-54aeaa58ca2a" />
+<img width="600" height="560" alt="image" src="https://github.com/user-attachments/assets/797e5fdc-21fc-4c59-bd3d-54aeaa58ca2a" />
 
 
 E, se aumentar a iteração:
