@@ -44,28 +44,31 @@ make compilar    # Compila modulo C
 make instalar    # Instala dependencias
 make executar    # Executa aplicacao
 
-ou GCC: gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelbrot.so
+ou , COMO EU FAÇO, GCC: gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelbrot.so
 
-Rodar a aplicação : python3 main.py 
-# Executar interface: 
-python3 interface.py
+Eu coloquei no powershell o cd (caminho) e entao compilei o gcc e depois o python main.py
+Uma dica, se for recompilar, faça:
+
+# Apaga a DLL antiga se ela existir para não haver conflito
+del mandelbrot.dll
+
+# Compila a nova DLL (O motor do projeto)
+gcc -O3 -shared -fPIC mandelbrot.c -o mandelbrot.dll
+
+Rodar a aplicação : python main.py 
+
 
 A aplicação abrirá uma janela exibindo o fractal. Você pode interagir da seguinte forma:
 
     Zoom: Clique e arraste o mouse para selecionar uma área específica. O fractal será recalculado para essa nova região.
-
     Slider de Iterações: Ajusta a precisão do cálculo (mais iterações = mais detalhe, porém mais processamento).
-
     Botão "Redefinir": Retorna à visualização inicial (coordenadas padrão).
-
     Botão "Calcular": Força a atualização com os parâmetros atuais do slider.
 
 Integracao Python-C:
 
     O código C é compilado como uma Shared Library (.so no Linux ou .dll no Windows).
-
     O Python utiliza a biblioteca ctypes para carregar esse binário.
-
     Os parâmetros de coordenadas e iterações são passados do Python para structs em C, onde o cálculo pesado ocorre, devolvendo os dados de cores para a interface.
 
 
