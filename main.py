@@ -140,23 +140,16 @@ class AplicativoMandelbrot:
             self.y_min, self.y_max,
             max_it
         )
+ if ponteiro:
+            dados = ponteiro.contents
+            tamanho_buffer = dados.largura * dados.altura * 3
+            pixels_brutos = ctypes.string_at(dados.pixels, tamanho_buffer)
+            imagem = Image.frombytes("RGB", (dados.largura, dados.altura), pixels_brutos)
+            lib.liberar_dados_mandelbrot(ponteiro)
+            
+            tempo_total = time.time() - inicio
+            self.raiz.after(0, self._renderizar_na_tela, imagem, tempo_total)
 
-        if not ponteiro:
-            self.raiz.after(0, lambda: self.status_var.set("Erro no retorno do C"))
-            return
-
-        # Converte os pixels brutos do C para uma imagem Python (PIL)
-        dados = ponteiro.contents
-        tamanho_buffer = dados.largura * dados.altura * 3
-        pixels_brutos = ctypes.string_at(dados.pixels, tamanho_buffer)
-        
-        imagem = Image.frombytes("RGB", (dados.largura, dados.altura), pixels_brutos)
-        
-        # Limpa a memória no C
-        lib.liberar_dados_mandelbrot(ponteiro)
-        
-        tempo_total = time.time() - inicio
-        self.raiz.after(0, self._renderizar_na_tela, imagem, tempo_total)
 
     def _renderizar_na_tela(self, imagem, tempo):
         self.foto = ImageTk.PhotoImage(imagem)
