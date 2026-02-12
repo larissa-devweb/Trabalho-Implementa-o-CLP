@@ -55,7 +55,7 @@ lib, info_lib = carregar_biblioteca()
 class AplicativoMandelbrot:
     def __init__(self, raiz):
         self.raiz = raiz
-        self.raiz.title("Fractal de Mandelbrot - Integração C + Python")
+       self.raiz.title("Mandelbrot Explorer - C + Python ")
         
         # Dimensões e Coordenadas Iniciais
         self.largura, self.altura = 800, 600
@@ -82,8 +82,8 @@ class AplicativoMandelbrot:
         painel = ttk.Frame(self.raiz, padding="5")
         painel.pack(side=tk.TOP, fill=tk.X)
 
-        ttk.Label(painel, text="Iterações:").pack(side=tk.LEFT, padx=5)
-        self.slider = ttk.Scale(painel, from_=50, to=3000, orient=tk.HORIZONTAL)
+ ttk.Label(painel, text="Iterações:").pack(side=tk.LEFT, padx=5)
+        self.slider = ttk.Scale(painel, from_=50, to=10000, orient=tk.HORIZONTAL)
         self.slider.set(256)
         self.slider.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
 
@@ -101,6 +101,27 @@ class AplicativoMandelbrot:
         self.status_var = tk.StringVar(value="Pronto")
         ttk.Label(self.raiz, textvariable=self.status_var, relief=tk.SUNKEN, anchor=tk.W).pack(side=tk.BOTTOM, fill=tk.X)
 
+ # Barra de Status
+        self.status_var = tk.StringVar(value="Pronto")
+        ttk.Label(self.raiz, textvariable=self.status_var, relief=tk.SUNKEN, anchor=tk.W).pack(side=tk.BOTTOM, fill=tk.X)
+
+    def ajustar_zoom(self, evento, fator):
+        """ Altera as coordenadas baseadas no ponto clicado e recalcula """
+        largura_real = self.x_max - self.x_min
+        altura_real = self.y_max - self.y_min
+        
+        clique_x = self.x_min + (evento.x / self.largura) * largura_real
+        clique_y = self.y_min + (evento.y / self.altura) * altura_real
+
+        nova_largura = largura_real * fator
+        nova_altura = altura_real * fator
+
+        self.x_min = clique_x - nova_largura / 2
+        self.x_max = clique_x + nova_largura / 2
+        self.y_min = clique_y - nova_altura / 2
+        self.y_max = clique_y + nova_altura / 2
+
+        self.desenhar_fractal()
 
     def desenhar_fractal(self):
         if not lib: return
