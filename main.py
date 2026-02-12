@@ -64,6 +64,11 @@ class AplicativoMandelbrot:
         self.foto = None
         
         self.configurar_ui()
+
+        # COMANDOS DO MOUSE PARA NAVEGAÇÃO
+        self.canvas.bind("<Button-1>", lambda e: self.ajustar_zoom(e, 0.5))  # Esq: Zoom In
+        self.canvas.bind("<Button-3>", lambda e: self.ajustar_zoom(e, 2.0))  # Dir: Zoom Out
+        
         
         if lib:
             self.desenhar_fractal()
@@ -84,15 +89,18 @@ class AplicativoMandelbrot:
 
         ttk.Button(painel, text="Calcular", command=self.desenhar_fractal).pack(side=tk.LEFT, padx=2)
         ttk.Button(painel, text="Redefinir", command=self.reset).pack(side=tk.LEFT, padx=2)
-
-        # Canvas para a imagem
-        self.canvas = tk.Canvas(self.raiz, width=self.largura, height=self.altura, bg="black")
+ # Legenda corrigida (alinhada dentro da função)
+        ttk.Label(painel, text=" Botão Esq: Zoom In | Botão Dir: Zoom Out", 
+                foreground="#f122be", font=("Arial", 9, "bold")).pack(side=tk.LEFT, padx=10)
+    
+        # Área do Desenho
+        self.canvas = tk.Canvas(self.raiz, width=self.largura, height=self.altura, bg="black", cursor="cross")
         self.canvas.pack()
 
         # Barra de Status
         self.status_var = tk.StringVar(value="Pronto")
-        status_bar = ttk.Label(self.raiz, textvariable=self.status_var, relief=tk.SUNKEN, anchor=tk.W)
-        status_bar.pack(side=tk.BOTTOM, fill=tk.X)
+        ttk.Label(self.raiz, textvariable=self.status_var, relief=tk.SUNKEN, anchor=tk.W).pack(side=tk.BOTTOM, fill=tk.X)
+
 
     def desenhar_fractal(self):
         if not lib: return
