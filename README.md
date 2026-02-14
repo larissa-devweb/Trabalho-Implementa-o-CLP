@@ -77,16 +77,29 @@ Se , ainda sim, Se o GCC disser que não reconhece -m64 ou -m32, significa que o
 DICA: para saber se seu pyhon é 64 ou 32: python -c "import struct; print(struct.calcsize('P') * 8)"
 
 
-Não esqueça que, ao baixar novo python, precisa fazer no terminal :
+## Não esqueça que, ao baixar novo python, precisa fazer no terminal :
 
 1. python -m pip install Pillow
 2. cd "caminho"
 3. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
 4. python main.py
 
-Imagens da miha compilação:
+## Imagens da miha compilação:
 
-Interface :
+##  Interface :
+
+<img width="1390" height="736" alt="Interface" src="https://github.com/user-attachments/assets/3e1dc3ad-cb80-4a32-bf58-6d67b0ea242d" />
 
 
-Se modificar o zoom:
+
+## Se modificar o zoom:
+
+Ao clica no botão esquerdo do mouse:
+
+<img width="764" height="588" alt="FotoBotaoEsquerdoZoom" src="https://github.com/user-attachments/assets/4eca9f03-c379-4a6e-a944-a831bb3eaf50" />
+
+Ao clica no botão direito do mouse:
+
+<img width="1366" height="768" alt="botaoDireito" src="https://github.com/user-attachments/assets/306c685a-0ff0-4d9e-b6e7-638218ff0928" />
+
+
