@@ -34,8 +34,12 @@ No terminal, instale a biblioteca de imagem: pip install pillow
 Compile e execulte:
 
 1. cd " caminho.."
-2. gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelbrot.so OU , SE DER ERRO:  gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
-3. python main.py
+2. 
+3. gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelbrot.so
+OU , SE DER ERRO:
+gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
+
+4. python main.py
 
 Uma dica, se for recompilar e der erro, faça:  Apaga a DLL antiga se ela existir para não haver conflito -> del mandelbrot.dll
 gcc -O3 -shared -fPIC mandelbrot.c -o mandelbrot.dll
@@ -94,11 +98,11 @@ DICA: para saber se seu pyhon é 64 ou 32: python -c "import struct; print(struc
 
 ## Se modificar o zoom:
 
-Ao clica no botão esquerdo do mouse:
+Ao clica no botão esquerdo do mouse, se amplia/ da zoom:
 
 <img width="764" height="588" alt="FotoBotaoEsquerdoZoom" src="https://github.com/user-attachments/assets/4eca9f03-c379-4a6e-a944-a831bb3eaf50" />
 
-Ao clica no botão direito do mouse:
+Ao clica no botão direito do mouse, recua/ diminue zoom:
 
 <img width="1366" height="768" alt="botaoDireito" src="https://github.com/user-attachments/assets/306c685a-0ff0-4d9e-b6e7-638218ff0928" />
 
