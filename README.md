@@ -34,7 +34,7 @@ No terminal, instale a biblioteca de imagem: pip install pillow
 Compile e execulte:
 
 1. cd " caminho.."
-2. gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelbrot.so
+2. gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelbrot.so OU , SE DER ERRO:  gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
 3. python main.py
 
 Uma dica, se for recompilar e der erro, faça:  Apaga a DLL antiga se ela existir para não haver conflito -> del mandelbrot.dll
