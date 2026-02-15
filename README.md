@@ -14,11 +14,11 @@
 
 ## Requisitos
 
-### Dependências
-- Python 3.8 ou superior
+- Python 3.8 ou superior 
 - GCC (Linux/Mac) ou MinGW (Windows)
 - Biblioteca Pillow (Python Imaging Library)
-- python compativel com GCC (ambos 64 bits ou 32 bits, o meu ambos sao 32 bits)
+- python compativel com compilador C (ambos 64 bits ou 32 bits, o meu ambos sao 32 bits e deu certo assim). Isso é fundamental para rodar.
+  Pois provavelmente seu compilador C é de 32bits e python 64 bits e precisa de python compativel e é mais facil baixar o python 32 bits (deixei os links de dowload e explicações abaixo)
 
 ### Instalação de Dependências
 
@@ -64,10 +64,11 @@ python teste_lib.py
 ## Se , ainda sim, o GCC disser que não reconhece -m64 ou -m32, significa que o seu instalador do MinGW só suporta uma arquitetura. 
 Nesse caso, você terá que baixar a versão do Python que combine com seu GCC, provavelmente o seu é de 64bits e precisa ser o de 32bits: https://www.python.org/downloads/windows/
 
-DICA para saber se seu pyhon é 64 ou 32: python -c "import struct; print(struct.calcsize('P') * 8)"
+## PRECISA SER AMBOS DA MESMA VERSÃO e normalmente nosso gcc é 32 bits e o python de 64 bits. Então, se apareceu erros desse tipo, apenas baixando python de 32 bits, no link acima, resolve.
 
+* DICA para saber se seu pyhon é 64 ou 32: python -c "import struct; print(struct.calcsize('P') * 8)"
 
-## Não esqueça que, ao baixar novo python, precisa fazer no terminal :
+## Não esqueça que, ao baixar NOVO PYTHON, precisa fazer no terminal :
 
 1. python -m pip install Pillow
 2. cd "caminho"
