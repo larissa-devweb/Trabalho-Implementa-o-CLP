@@ -31,7 +31,7 @@ Instale o MinGW ou as Ferramentas de Compilação do Visual Studio.
 
 No terminal, instale a biblioteca de imagem: pip install pillow
 
-Compile e execulte:
+Compile e execulte (uso windows nesse caso, então só posso dizer os erros e como resolver nele):
 
 1. cd " caminho.."
   
