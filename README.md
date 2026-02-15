@@ -34,33 +34,35 @@ No terminal, instale a biblioteca de imagem: pip install pillow
 Compile e execulte:
 
 1. cd " caminho.."
+  
 2. gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelbrot.so
 OU , SE DER ERRO:
 gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
 
 4. python main.py
 
-## Uma dica, se for recompilar e der erro, faça:  Apaga a DLL antiga se ela existir para não haver conflito ->
+# dica: coloque o zip do projeto no disco C e use caminho da pasta MAIS INTERNA para pôr no cd "C:\Trabalho-Implementa-o-CLP-main\Trabalho-Implementa-o-CLP-main"
+
+## Se for compilar e der erro, faça:  Apaga a DLL antiga se ela existir para não haver conflito 
 
 del mandelbrot.dll
 gcc -O3 -shared -fPIC mandelbrot.c -o mandelbrot.dll
- python main.py 
+python main.py
 
+## OBSERVAÇÃO : 
 
-## OBSERVAÇÃO: 
-
-Se tiver problema de não reconhecer caminho cd e/ou main.py, tente forçar a leitura de 64 bits ou 32 bits abaixo:
+Se ainda tiver erro de não reconhecer caminho cd e/ou main.py, tente forçar a leitura de 64 bits ou 32 bits abaixo:
 
 gcc -m64 -shared mandelbrot.c -o mandelbrot.dll
 python teste_lib.py
 
-OU 
+## OU 
 
 gcc -m32 -shared mandelbrot.c -o mandelbrot.dll
 python teste_lib.py
 
-## Se , ainda sim, Se o GCC disser que não reconhece -m64 ou -m32, significa que o seu instalador do MinGW só suporta uma arquitetura. 
-Nesse caso, você terá que baixar a versão do Python que combine com seu GCC, provavelmente o seu é de 64buts e precisa ser o de 32bits: https://www.python.org/downloads/windows/
+## Se , ainda sim, o GCC disser que não reconhece -m64 ou -m32, significa que o seu instalador do MinGW só suporta uma arquitetura. 
+Nesse caso, você terá que baixar a versão do Python que combine com seu GCC, provavelmente o seu é de 64bits e precisa ser o de 32bits: https://www.python.org/downloads/windows/
 
 DICA para saber se seu pyhon é 64 ou 32: python -c "import struct; print(struct.calcsize('P') * 8)"
 
@@ -72,7 +74,7 @@ DICA para saber se seu pyhon é 64 ou 32: python -c "import struct; print(struct
 3. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
 4. python main.py
 
-
+## EXPLICAÇÃO:
 
 A aplicação abrirá uma janela exibindo o fractal. Você pode interagir da seguinte forma:
 
