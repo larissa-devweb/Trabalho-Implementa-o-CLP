@@ -61,7 +61,7 @@ gcc -m32 -shared mandelbrot.c -o mandelbrot.dll
 python teste_lib.py
 
 ## Se , ainda sim, o GCC disser que não reconhece -m64 ou -m32, significa que o seu instalador do MinGW só suporta uma arquitetura. 
-Nesse caso, você terá que baixar a versão do Python que combine com seu GCC, provavelmente o seu é de 64bits e precisa ser o de 32bits: https://www.python.org/downloads/windows/
+Nesse caso, você terá que baixar a versão do Python que combine com seu GCC, provavelmente o seu python é de 64bits e precisa ser o de 32bits: https://www.python.org/downloads/windows/
 
 ## PRECISA SER AMBOS DA MESMA VERSÃO e normalmente nosso gcc é 32 bits e o python de 64 bits. Então, se apareceu erros desse tipo, apenas baixando python de 32 bits, no link acima, resolve.
 
