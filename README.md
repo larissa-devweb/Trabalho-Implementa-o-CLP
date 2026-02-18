@@ -35,13 +35,12 @@ Compile e execulte (uso windows nesse caso, então só posso dizer os erros e co
 
 1. cd " caminho.."
   
-2. gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelbrot.so
-OU , SE DER ERRO:
-gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
+2. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
+outra opçao seria:  gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelbrot.so
 
-4. python main.py
+3. python main.py
 
-# dica: coloque o zip do projeto no disco C e use caminho da pasta MAIS INTERNA para pôr no cd "C:\Trabalho-Implementa-o-CLP-main\Trabalho-Implementa-o-CLP-main"
+# dica: coloque o zip do projeto no disco C e use caminho da pasta MAIS INTERNA para pôr no cd , como eu fiz: "C:\Trabalho-Implementa-o-CLP-main\Trabalho-Implementa-o-CLP-main"
 
 ## Se for compilar e der erro, faça:  Apaga a DLL antiga se ela existir para não haver conflito 
 
@@ -94,6 +93,12 @@ Integracao Python-C:
     O código C é compilado como uma Shared Library (.so no Linux ou .dll no Windows).
     O Python utiliza a biblioteca ctypes para carregar esse binário.
     Os parâmetros de coordenadas e iterações são passados do Python para structs em C, onde o cálculo pesado ocorre, devolvendo os dados de cores para a interface.
+
+ ## LINK DO VIDEO em drive DA MINHA COMPILAÇAO: 
+
+ https://drive.google.com/file/d/1lY5E4opy7b3LAHkZvQjlKjBZmWbpWENt/view?usp=sharing
+
+ obs: tomei liberdade de coloca o link, para caso por algum motivo não funcionar no seu PC. É minha prova que segui os passos e deu certo. 
 
 ## Imagens da minha compilação:
 
