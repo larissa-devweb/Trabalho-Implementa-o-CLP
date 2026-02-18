@@ -44,9 +44,9 @@ outra opçao seria:  gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelb
 
 ## Se for compilar e der erro, faça:  Apaga a DLL antiga se ela existir para não haver conflito 
 
-del mandelbrot.dll
-gcc -O3 -shared -fPIC mandelbrot.c -o mandelbrot.dll
-python main.py
+1. del mandelbrot.dll
+2. gcc -O3 -shared -fPIC mandelbrot.c -o mandelbrot.dll
+3. python main.py
 
 ## OBSERVAÇÃO : 
 
