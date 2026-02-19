@@ -112,7 +112,10 @@ https://drive.google.com/file/d/1dp-CMi_KCztcE87JhbOF8lMMpRK8VPL9/view?usp=shari
 
 ##  Interface :
 
-<img width="1390" height="736" alt="Interface" src="https://github.com/user-attachments/assets/3e1dc3ad-cb80-4a32-bf58-6d67b0ea242d" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/7e43a627-8d3d-4e10-a310-a9ed5d882d70" />
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/32a2e2cf-9e35-479e-b6c1-35a2372c1397" />
+
 
 
 
@@ -120,10 +123,12 @@ https://drive.google.com/file/d/1dp-CMi_KCztcE87JhbOF8lMMpRK8VPL9/view?usp=shari
 
 Ao clica no botão esquerdo do mouse, se amplia/ da zoom:
 
-<img width="764" height="588" alt="FotoBotaoEsquerdoZoom" src="https://github.com/user-attachments/assets/4eca9f03-c379-4a6e-a944-a831bb3eaf50" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/42ef7391-a536-4ff0-b75b-9e2ade0fdee6" />
+
 
 Ao clica no botão direito do mouse, recua/ diminue zoom:
 
-<img width="1366" height="768" alt="botaoDireito" src="https://github.com/user-attachments/assets/306c685a-0ff0-4d9e-b6e7-638218ff0928" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/bdc5889d-5be2-4862-911c-58abdd38f63a" />
+
 
 
