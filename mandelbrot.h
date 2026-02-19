@@ -11,16 +11,19 @@ typedef struct {
     double x_max;
     double y_min;
     double y_max;
-    uint8_t* pixels; // array de pixels
-
+    uint8_t* pixels; 
 } DadosMandelbrot;
 
 //calculo
 
 DadosMandelbrot* calcular_mandelbrot (  int largura, int altura,  double x_min, double x_max,double y_min,
-                    double y_max; int max_iteracoes);
+                    double y_max, int max_iteracoes);
 
-// liberar memória
+
+
+void aplicar_cores_avancadas(uint8_t* pixels, int* iteracoes, 
+                             int largura, int altura, int max_iter);
+
+// Função para liberar memória
 void liberar_dados_mandelbrot(DadosMandelbrot* dados);
-
 #endif
