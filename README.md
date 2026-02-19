@@ -82,11 +82,19 @@ A aplicação abrirá uma janela exibindo o fractal. Você pode interagir da seg
     Como usar agora:
     Clique no botão Esquerdo do MOUSE : Centraliza e aproxima.
     Clique no botão Direito do MOUSE: Afasta a câmera (Zoom Out).
+
+    Tem opçao de resetar zoom, se quiser.
+    
     Dica de Performance: Quando você entrar muito fundo no fractal (Zoom alto), a imagem pode começar a ficar "lisa" ou com poucos detalhes. Quando isso acontecer, aumente o Slider de Iterações e clique novamente. Isso faz o C trabalhar mais para encontrar os detalhes escondidos
+
+    ABA 2: 
     
     Slider de Iterações: Ajusta a precisão do cálculo (mais iterações = mais detalhe, porém mais processamento).
     Botão "Redefinir": Retorna à visualização inicial (coordenadas padrão).
     Botão "Calcular": Força a atualização com os parâmetros atuais do slider.
+
+    ABA 3: 
+      - caracteristicas do fractal
 
 Integracao Python-C:
 
@@ -96,7 +104,7 @@ Integracao Python-C:
 
  ## LINK DO VIDEO em drive DA MINHA COMPILAÇAO: 
 
- https://drive.google.com/file/d/1lY5E4opy7b3LAHkZvQjlKjBZmWbpWENt/view?usp=sharing
+https://drive.google.com/file/d/1dp-CMi_KCztcE87JhbOF8lMMpRK8VPL9/view?usp=sharing
 
  obs: tomei liberdade de coloca o link, para caso por algum motivo não funcionar no seu PC. É minha prova que segui os passos e deu certo. 
 
