@@ -100,12 +100,20 @@ https://drive.google.com/file/d/1dp-CMi_KCztcE87JhbOF8lMMpRK8VPL9/view?usp=shari
 
 Ao clica no botão esquerdo do mouse, se amplia/ da zoom:
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/42ef7391-a536-4ff0-b75b-9e2ade0fdee6" />
+<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/42ef7391-a536-4ff0-b75b-9e2ade0fdee6" />
+
+<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/1a3d766f-9a50-49a4-ab42-c4de8a95084c" />
+
+<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/52cb03e1-9a56-4466-a52b-14ee101a4d05" />
+
 
 
 Ao clica no botão direito do mouse, recua/ diminue zoom:
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/bdc5889d-5be2-4862-911c-58abdd38f63a" />
+<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/bdc5889d-5be2-4862-911c-58abdd38f63a" />
+
+<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/479c8868-108d-410c-8e3b-d6648fa73af3" />
+
 
 
 
