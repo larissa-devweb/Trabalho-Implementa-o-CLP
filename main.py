@@ -1,13 +1,13 @@
-import ctypes
+import ctypes #Permite chamar funções em C
 import os
 import platform
-import threading
+import threading #Mantém a interface (GUI) rodando enquanto o C calcula em paralelo.
 import time
 import tkinter as tk
 from tkinter import ttk, messagebox
-from PIL import Image, ImageTk
+from PIL import Image, ImageTk #Faz a ponte entre os bytes brutos do C e uma imagem visível.
 
-# DEFINIÇÃO DA ESTRUTURA (INTERFACE COM O C)
+# DEFINIÇÃO DA ESTRUTURA (INTERFACE COM O C) -> espelhamento exato da 'struct' no arquivo C.
 class DadosMandelbrot(ctypes.Structure):
     _fields_ = [
         ("largura", ctypes.c_int),
@@ -17,10 +17,15 @@ class DadosMandelbrot(ctypes.Structure):
         ("x_max", ctypes.c_double),
         ("y_min", ctypes.c_double),
         ("y_max", ctypes.c_double),
+        # Ponteiro para o array de pixels. Sem o POINTER, o Python não sabe
+        # onde termina a struct e onde começa a imagem na memória RAM.
         ("pixels", ctypes.POINTER(ctypes.c_uint8))
     ]
 
-# CARREGAMENTO DA BIBLIOTECA (DLL)
+# CARREGAMENTO DA BIBLIOTECA (DLL) ->(PONTE DE EXECUÇÃO)
+#definir restype e argtypes, pois, Por padrão, o ctypes acha que tudo é inteiro. Se não definirmos que
+# 'calcular_mandelbrot' retorna um PONTEIRO para a nossa struct, 
+# o Python vai tentar ler o endereço de memória como um número comum e travar
 def carregar_biblioteca():
     diretorio_atual = os.path.dirname(os.path.abspath(__file__))
     nome_dll = "mandelbrot.dll" if platform.system() == "Windows" else "mandelbrot.so"
@@ -32,6 +37,9 @@ def carregar_biblioteca():
     try:
         biblioteca = ctypes.CDLL(caminho_lib)
         biblioteca.calcular_mandelbrot.restype = ctypes.POINTER(DadosMandelbrot)
+
+        # Define os tipos de entrada: Garante que o Python converta os dados 
+        # corretamente antes de enviar para os registradores do processador.
         biblioteca.calcular_mandelbrot.argtypes = [
             ctypes.c_int, ctypes.c_int,
             ctypes.c_double, ctypes.c_double,
@@ -52,7 +60,7 @@ class AplicativoMandelbrot:
         self.raiz.title("Mandelbrot Explorer - C + Python")
         self.raiz.geometry("900x750")
         
-        # Coordenadas Iniciais do Plano Complexo
+        #Coordenadas que serão enviadas ao motor C
         self.largura, self.altura = 800, 600
         self.x_min_inicial, self.x_max_inicial = -2.0, 1.0  # Salva valores iniciais
         self.y_min_inicial, self.y_max_inicial = -1.2, 1.2
@@ -69,9 +77,8 @@ class AplicativoMandelbrot:
             messagebox.showerror("Erro", f"DLL não encontrada!\n{info_lib}")
 
     def configurar_ui(self):
-        # =====================================================
-        # NOTEBOOK (ABAS)
-        # =====================================================
+        
+        #ABAS da interface
         self.notebook = ttk.Notebook(self.raiz)
         self.notebook.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
         
@@ -86,10 +93,8 @@ class AplicativoMandelbrot:
         # Aba 3: Informações
         self.aba_info = ttk.Frame(self.notebook)
         self.notebook.add(self.aba_info, text="ℹ️ Info")
-        
-        # =====================================================
+ 
         # ABA VISUAL - Canvas do Fractal
-        # =====================================================
         # Frame para centralizar o canvas
         frame_canvas = ttk.Frame(self.aba_visual)
         frame_canvas.pack(expand=True, fill=tk.BOTH, padx=10, pady=10)
@@ -107,9 +112,7 @@ class AplicativoMandelbrot:
         self.canvas.bind("<Button-1>", lambda e: self.ajustar_zoom(e, 0.5))  # Esq: Zoom In
         self.canvas.bind("<Button-3>", lambda e: self.ajustar_zoom(e, 2.0))  # Dir: Zoom Out
         
-        # =====================================================
         # BARRA DE FERRAMENTAS NA ABA VISUAL
-        # =====================================================
         toolbar = ttk.Frame(self.aba_visual)
         toolbar.pack(fill=tk.X, pady=5)
         
@@ -128,9 +131,7 @@ class AplicativoMandelbrot:
                  foreground="#f122be", 
                  font=("Arial", 10, "bold")).pack(side=tk.RIGHT, padx=10)
         
-        # =====================================================
         # ABA CONTROLES - Parâmetros
-        # =====================================================
         frame_controles = ttk.Frame(self.aba_controles, padding="30")
         frame_controles.pack(expand=True, fill=tk.BOTH)
         
@@ -186,9 +187,7 @@ class AplicativoMandelbrot:
                                       foreground='green')
         self.status_label.pack(pady=20)
         
-        # =====================================================
         # ABA INFO - Estatísticas
-        # =====================================================
         frame_stats = ttk.Frame(self.aba_info, padding="40")
         frame_stats.pack(expand=True, fill=tk.BOTH)
         
@@ -314,7 +313,7 @@ class AplicativoMandelbrot:
     def _processar_calculo(self):
         inicio = time.time()
         max_it = int(self.slider.get())
-
+# Chamada da função C: Retorna um ponteiro para a memória alocada no C
         ponteiro = lib.calcular_mandelbrot(
             self.largura, self.altura,
             self.x_min, self.x_max,
@@ -323,10 +322,14 @@ class AplicativoMandelbrot:
         )
 
         if ponteiro:
-            dados = ponteiro.contents
+            dados = ponteiro.contents # Acessa a estrutura de dados via ponteiro
             tamanho_buffer = dados.largura * dados.altura * 3
+
+            # MEMÓRIA COMPARTILHADA: 
+            # 'string_at' lê os bytes diretamente do endereço de RAM alocado pelo C.
+            # É o jeito mais rápido de transferir milhões de pixels entre linguagens.
             pixels_brutos = ctypes.string_at(dados.pixels, tamanho_buffer)
-            imagem = Image.frombytes("RGB", (dados.largura, dados.altura), pixels_brutos)
+            imagem = Image.frombytes("RGB", (dados.largura, dados.altura), pixels_brutos) # O Pillow (Image) reconstrói a imagem a partir dos bytes brutos.
             lib.liberar_dados_mandelbrot(ponteiro)
             
             self.ultimo_tempo = time.time() - inicio
