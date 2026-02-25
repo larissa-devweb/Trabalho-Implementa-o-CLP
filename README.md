@@ -11,7 +11,6 @@
 - `main.py`: interface gráfica em Python usando Tkinter e PIL.
 - `Makefile`: para compilar a biblioteca compartilhada.
 - `README.md`
-- requerimentos.txt 
 
 ## Requisitos
 
@@ -23,9 +22,7 @@
 
 ### Instalação de Dependências
 
-- se:  pip install -r requirements.txt ,  não funcionar:
-
-# para saber se seu pyhon é 64 ou 32: python -c "import struct; print(struct.calcsize('P') * 8)"
+- Primeiro passo é saber se seu seu pyhon é 64 ou 32: python -c "import struct; print(struct.calcsize('P') * 8)"
 
  -baixar PYTHON 32bits: https://www.python.org/downloads/windows/
 -  biblioteca de imagem: pip install pillow
