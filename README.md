@@ -11,62 +11,46 @@
 - `main.py`: interface gráfica em Python usando Tkinter e PIL.
 - `Makefile`: para compilar a biblioteca compartilhada.
 - `README.md`
+- requerimentos.txt 
 
 ## Requisitos
 
-- Python 3.8 (32 bits, se seu gcc for 32bits)
-- GCC (Linux/Mac) ou MinGW (Windows)
+- Python 3.8 (32 bits, se seu gcc for 32bits) 
+- GCC (Linux/Mac) ou MinGW (Windows) em 32bits.
 - Biblioteca Pillow (Python Imaging Library)
 
-- python compativel com compilador C (ambos 64 bits ou 32 bits, o meu ambos sao 32 bits e deu certo assim). Isso é fundamental para rodar, Já que eles se complementam no codigo.
-  Seu compilador C provavelmente é de 32bits e python 64 bits e é mais facil baixar o python 32 bits (deixei os links de dowload e explicações abaixo)
+- python compativel com compilador C (ambos 32 bits ou 64bits, o meu deu certo ambos de 32bits). Isso é fundamental para rodar e é mais facil baixar o python 32 bits (deixei os links de dowload e explicações abaixo).
 
 ### Instalação de Dependências
 
-#### Ubuntu/Debian: sudo apt-get update
-sudo apt-get install python3-tk python3-pil python3-pil.imagetk build-essential python3-dev
+- se:  pip install -r requirements.txt ,  não funcionar:
 
-### Windows: Instale o Python 3.
+# para saber se seu pyhon é 64 ou 32: python -c "import struct; print(struct.calcsize('P') * 8)"
 
-- Instale o MinGW
-- No terminal, instale a biblioteca de imagem: pip install pillow
+ -baixar PYTHON 32bits: https://www.python.org/downloads/windows/
+-  biblioteca de imagem: pip install pillow
 
 # Compile e execulte (uso windows nesse caso, então só posso dizer os erros e como resolver nele):
 
-1. cd " caminho.."
-  
-2. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
-outra opçao seria:  gcc -O3 -march=native -fPIC -shared mandelbrot.c -o mandelbrot.so
+- Caso não possua o make, execute os seguintes comandos na raiz do projeto:
 
+1. cd " caminho/mais/interno/da/pasta"
+
+-Para a ponte entre o C e o Python ser construida, pela Biblioteca de Vínculo Dinâmico (DLL):
+
+2.  del mandelbrot.dll
+3.  gcc -O3 -shared -fPIC mandelbrot.c -o mandelbrot.dll
+4. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
 3. python main.py
 
-# dica: coloque o zip do projeto no disco C e use caminho da pasta MAIS INTERNA para pôr no cd , como eu fiz: "C:\Trabalho-Implementa-o-CLP-main\Trabalho-Implementa-o-CLP-main"
-
-## Se for compilar e der erro, Apague a DLL antiga se ela existir para não haver conflito . 
--FAÇA:
-
+## Se for compilar e der o primeiro erro, refaça:
 1. del mandelbrot.dll
 2. gcc -O3 -shared -fPIC mandelbrot.c -o mandelbrot.dll
 3. python main.py
 
 ## OBSERVAÇÃO : 
 
-Se ainda tiver erro de não reconhecer caminho cd e/ou main.py, tente forçar a leitura de 64 bits ou 32 bits abaixo(seu problema será uso de 64 bits + 32 bits e não pode):
-
-gcc -m64 -shared mandelbrot.c -o mandelbrot.dll
-python teste_lib.py
-
-## OU 
-
-gcc -m32 -shared mandelbrot.c -o mandelbrot.dll
-python teste_lib.py
-
-## Se , ainda sim, o GCC disser que não reconhece -m64 ou -m32, significa que o seu instalador do MinGW só suporta uma arquitetura. 
-Nesse caso, você terá que baixar a versão do Python que combine com seu GCC, provavelmente o seu python é de 64bits e precisa ser o de 32bits: https://www.python.org/downloads/windows/
-
-## PRECISA SER AMBOS DA MESMA VERSÃO e normalmente nosso gcc é 32 bits e o python de 64 bits. Então, se apareceu erros desse tipo, apenas baixando python de 32 bits, no link acima, resolve.
-
-* DICA para saber se seu pyhon é 64 ou 32: python -c "import struct; print(struct.calcsize('P') * 8)"
+- Se o GCC disser que não reconhece -m64 ou -m32, significa que o seu instalador do MinGW é 32bits e python continua sendo 64bits -> PYTHON 32bits: https://www.python.org/downloads/windows/
 
 ## Não esqueça que, ao baixar NOVO PYTHON, precisa fazer no terminal :
 
@@ -79,15 +63,10 @@ Nesse caso, você terá que baixar a versão do Python que combine com seu GCC, 
 
 A aplicação abrirá uma janela exibindo o fractal. Você pode interagir da seguinte forma:
 
-    Zoom: Clique e arraste o mouse para selecionar uma área específica. O fractal será recalculado para essa nova região.
-    Como usar agora:
-    Clique no botão Esquerdo do MOUSE : Centraliza e aproxima.
-    Clique no botão Direito do MOUSE: Afasta a câmera (Zoom Out).
-
-    Tem opçao de resetar zoom, se quiser.
+    Zoom:Botão Esquerdo: Centraliza e aproxima (Zoom In).
+    Botão Direito: Afasta a câmera (Zoom Out).
+    Redefinir zoom
     
-    Dica de Performance: Quando você entrar muito fundo no fractal (Zoom alto), a imagem pode começar a ficar "lisa" ou com poucos detalhes. Quando isso acontecer, aumente o Slider de Iterações e clique novamente. Isso faz o C trabalhar mais para encontrar os detalhes escondidos
-
     ABA 2: 
     
     Slider de Iterações: Ajusta a precisão do cálculo (mais iterações = mais detalhe, porém mais processamento).
