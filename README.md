@@ -112,6 +112,9 @@ https://drive.google.com/file/d/1dp-CMi_KCztcE87JhbOF8lMMpRK8VPL9/view?usp=shari
 
 <img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/379c6db6-1bae-412d-9ec9-d56786099942" />
 
+<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/fb1271de-6dba-4296-bf8a-1ab98674372d" />
+
+
 
 ## Ao clica no botão direito do mouse, recua/ diminue zoom:
 
