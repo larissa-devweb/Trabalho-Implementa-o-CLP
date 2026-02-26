@@ -20,6 +20,7 @@
 
 - python compativel com compilador C (ambos 32 bits ou 64bits, o meu deu certo ambos de 32bits). Isso é fundamental para rodar e é mais facil baixar o python 32 bits (deixei os links de dowload e explicações abaixo).
 
+
 ### Instalação de Dependências
 
 - Primeiro passo é saber se seu seu pyhon é 64 ou 32: python -c "import struct; print(struct.calcsize('P') * 8)"
@@ -27,9 +28,17 @@
  -baixar PYTHON 32bits: https://www.python.org/downloads/windows/
 -  biblioteca de imagem: pip install pillow
 
-# Compile e execulte (uso windows nesse caso, então só posso dizer os erros e como resolver nele):
+## MAKEFILE:
 
-- Caso não possua o make, execute os seguintes comandos na raiz do projeto:
+- make compilar
+- make executar
+
+-Dica: No Makefile, o espaço antes dos comandos TEM QUE SER UM TAB. Se você copiar e colar e der erro de missing separator, 
+apague os espaços antes de $(CC), $(PYTHON) e $(RM) e aperte a tecla Tab
+
+# SE MakeFile não funcionar: Compile e execulte (uso windows nesse caso, então só posso dizer os erros e como resolver nele):
+
+- execute os seguintes comandos na raiz do projeto:
 
 1. cd " caminho/mais/interno/da/pasta"
 
