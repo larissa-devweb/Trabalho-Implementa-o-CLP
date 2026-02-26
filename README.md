@@ -105,5 +105,5 @@ https://drive.google.com/file/d/1eZ-SX1NbjV-S79sieSz53obLsCR6rk1w/view?usp=shari
 
 <img width="1000" height="768" alt="image" src="https://github.com/user-attachments/assets/438ae9bd-c855-4d14-8fd8-948f0ea336b8" />
 
-<img width="810" height="560" alt="image" src="https://github.com/user-attachments/assets/e2e32a1a-2600-495c-9c66-cdc88f1440a3" />
+<img width="1000" height="768" alt="image" src="https://github.com/user-attachments/assets/e2e32a1a-2600-495c-9c66-cdc88f1440a3" />
 
