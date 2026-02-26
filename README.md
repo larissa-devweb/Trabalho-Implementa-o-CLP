@@ -41,12 +41,10 @@ apague os espaços antes de $(CC), $(PYTHON) e $(RM) e aperte a tecla Tab
 - execute os seguintes comandos na raiz do projeto:
 
 1. cd " caminho/mais/interno/da/pasta"
-
--Para a ponte entre o C e o Python ser construida, pela Biblioteca de Vínculo Dinâmico (DLL):
-
-2.  gcc -O3 -shared -fPIC mandelbrot.c -o mandelbrot.dll
-3. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
-4. python main.py
+2. del mandelbrot.dll
+3.  gcc -O3 -shared -fPIC mandelbrot.c -o mandelbrot.dll
+4. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
+5. python main.py
 
 ## Se for compilar e der o primeiro erro, refaça:
 1. del mandelbrot.dll
@@ -68,8 +66,9 @@ apague os espaços antes de $(CC), $(PYTHON) e $(RM) e aperte a tecla Tab
 
 A aplicação abrirá uma janela exibindo o fractal. Você pode interagir da seguinte forma:
 
-    Zoom:Botão Esquerdo: Centraliza e aproxima (Zoom In).
-    Botão Direito: Afasta a câmera (Zoom Out).
+    Zoom:
+    Botão Direito: Centraliza e aproxima (Zoom In).
+    Botão Esquerdo: Afasta a câmera (Zoom Out).
     Redefinir zoom
     
     ABA 2: 
@@ -89,7 +88,7 @@ Integracao Python-C:
 
  ## LINK DO VIDEO em drive DA MINHA COMPILAÇAO: 
 
-https://drive.google.com/file/d/1dp-CMi_KCztcE87JhbOF8lMMpRK8VPL9/view?usp=sharing
+https://drive.google.com/file/d/1eZ-SX1NbjV-S79sieSz53obLsCR6rk1w/view?usp=sharing
 
  obs: tomei liberdade de colocar o link, para caso por algum motivo não funcionar no seu PC. É minha prova que segui os passos e deu certo. 
 
@@ -97,33 +96,14 @@ https://drive.google.com/file/d/1dp-CMi_KCztcE87JhbOF8lMMpRK8VPL9/view?usp=shari
 
 ##  Interface :
 
-<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/4198e9f7-793a-4d85-84cb-00fe02c06ee1" />
-
-<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/b87a08d5-797d-4fa8-a7c4-cbc92afa04cd" />
+<img width="1300" height="768" alt="image" src="https://github.com/user-attachments/assets/022ee03a-41f4-4896-af5d-96752eade8f2" />
 
 
-### Se modificar o zoom:
+## Ao clicar no botão direito do mouse:
 
-## Ao clica no botão esquerdo do mouse, se amplia/ da zoom:
+<img width="1000" height="768" alt="image" src="https://github.com/user-attachments/assets/a8f5886d-56df-49b1-bbb6-f8df7fc1d1ac" />
 
-<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/000469c6-f4e6-47af-babe-828806194247" />
+<img width="1000" height="768" alt="image" src="https://github.com/user-attachments/assets/438ae9bd-c855-4d14-8fd8-948f0ea336b8" />
 
-<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/52cb03e1-9a56-4466-a52b-14ee101a4d05" />
-
-<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/379c6db6-1bae-412d-9ec9-d56786099942" />
-
-<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/fb1271de-6dba-4296-bf8a-1ab98674372d" />
-
-
-
-## Ao clica no botão direito do mouse, recua/ diminue zoom:
-
-<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/c61589e9-60a0-4279-b1a8-9447a4446323" />
-
-
-<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/e47b9dee-2894-4d91-901d-b3833b991e6c" />
-
-
-
-
+<img width="810" height="560" alt="image" src="https://github.com/user-attachments/assets/e2e32a1a-2600-495c-9c66-cdc88f1440a3" />
 
