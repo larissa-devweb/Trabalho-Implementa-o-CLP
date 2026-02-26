@@ -86,7 +86,7 @@ Integracao Python-C:
     O Python utiliza a biblioteca ctypes para carregar esse binário.
     Os parâmetros de coordenadas e iterações são passados do Python para structs em C, onde o cálculo pesado ocorre, devolvendo os dados de cores para a interface.
 
- ## LINK DO VIDEO em drive DA MINHA COMPILAÇAO: 
+ ## Link do vídeo em drive da MINHA compilação: 
 
 https://drive.google.com/file/d/1eZ-SX1NbjV-S79sieSz53obLsCR6rk1w/view?usp=sharing
 
