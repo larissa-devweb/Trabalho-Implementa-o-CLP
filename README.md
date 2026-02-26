@@ -1,4 +1,4 @@
-# Projeto de Fractal de Mandelbrot usando Python e C
+#Fractal de Mandelbrot
 
 - Python: Interface gráfica
 - C: Cálculos matemáticos do fractal
