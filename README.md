@@ -89,30 +89,29 @@ https://drive.google.com/file/d/1dp-CMi_KCztcE87JhbOF8lMMpRK8VPL9/view?usp=shari
 
 ##  Interface :
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/7e43a627-8d3d-4e10-a310-a9ed5d882d70" />
+<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/4198e9f7-793a-4d85-84cb-00fe02c06ee1" />
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/32a2e2cf-9e35-479e-b6c1-35a2372c1397" />
-
-
+<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/b87a08d5-797d-4fa8-a7c4-cbc92afa04cd" />
 
 
 ## Se modificar o zoom:
 
 Ao clica no botão esquerdo do mouse, se amplia/ da zoom:
 
-<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/42ef7391-a536-4ff0-b75b-9e2ade0fdee6" />
-
-<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/1a3d766f-9a50-49a4-ab42-c4de8a95084c" />
+<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/000469c6-f4e6-47af-babe-828806194247" />
 
 <img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/52cb03e1-9a56-4466-a52b-14ee101a4d05" />
 
+<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/379c6db6-1bae-412d-9ec9-d56786099942" />
 
 
 Ao clica no botão direito do mouse, recua/ diminue zoom:
 
-<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/bdc5889d-5be2-4862-911c-58abdd38f63a" />
+<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/c61589e9-60a0-4279-b1a8-9447a4446323" />
 
-<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/479c8868-108d-410c-8e3b-d6648fa73af3" />
+
+<img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/e47b9dee-2894-4d91-901d-b3833b991e6c" />
+
 
 
 
