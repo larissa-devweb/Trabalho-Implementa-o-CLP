@@ -1,41 +1,27 @@
-# como compilar tudo: make executar
-#Para apenas compilar o código C: make compilar
-#Lembre-se que no Makefile, os comandos abaixo dos nomes (como all:, compilar:) precisa começar com um Tab, não espaços.
-#Se copiar e der erro de "missing separator", verificar se editor não converteu os Tabs em espaços.
-
-# Variáveis de Compilação
+# Variáveis
 CC = gcc
-CFLAGS = -O3 -march=native -fPIC -shared
-TARGET_LIB = mandelbrot.so
+CFLAGS = -O3 -march=native -fPIC -shared -fopenmp
 SRC = mandelbrot.c
-PYTHON = python3
+PYTHON = python
 
-# Detectar Sistema Operacional para extensão da biblioteca
+# Ajuste de Extensão (Windows vs Linux)
 ifeq ($(OS), Windows_NT)
-    TARGET_LIB = mandelbrot.dll
-    PYTHON = python 
+    LIB = mandelbrot.dll
+    RM = del /f
+else
+    LIB = mandelbrot.so
+    RM = rm -f
+    PYTHON = python3
 endif
 
-# Alvo padrão: Compila tudo
-all: compilar
+# 1. Entrada para geração do executável (Compilação)
+compilar:
+	$(CC) $(CFLAGS) $(SRC) -o $(LIB) -lm
 
-# Compila a biblioteca C
-compilar: $(SRC)
-	@echo " Compilando a biblioteca compartilhada..."
-	$(CC) $(CFLAGS) $(SRC) -o $(TARGET_LIB)
-	@echo " Compilação concluída: $(TARGET_LIB)"
-
-# Instala dependências do Python
-instalar:
-	@echo "Instalando dependências (Pillow)..."
-	$(PYTHON) -m pip install pillow
-
-# Executa a aplicação
+# 2. Entrada para execução (Caso de Estudo)
 executar: compilar
-	@echo " Iniciando a interface..."
 	$(PYTHON) main.py
 
-# Limpa arquivos gerados
+# Limpeza
 clean:
-	@echo " Limpando arquivos binários..."
-	rm -f $(TARGET_LIB)
+	$(RM) $(LIB)
