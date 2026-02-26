@@ -94,9 +94,9 @@ https://drive.google.com/file/d/1dp-CMi_KCztcE87JhbOF8lMMpRK8VPL9/view?usp=shari
 <img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/b87a08d5-797d-4fa8-a7c4-cbc92afa04cd" />
 
 
-## Se modificar o zoom:
+### Se modificar o zoom:
 
-Ao clica no botão esquerdo do mouse, se amplia/ da zoom:
+## Ao clica no botão esquerdo do mouse, se amplia/ da zoom:
 
 <img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/000469c6-f4e6-47af-babe-828806194247" />
 
@@ -105,7 +105,7 @@ Ao clica no botão esquerdo do mouse, se amplia/ da zoom:
 <img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/379c6db6-1bae-412d-9ec9-d56786099942" />
 
 
-Ao clica no botão direito do mouse, recua/ diminue zoom:
+## Ao clica no botão direito do mouse, recua/ diminue zoom:
 
 <img width="1366" height="770" alt="image" src="https://github.com/user-attachments/assets/c61589e9-60a0-4279-b1a8-9447a4446323" />
 
