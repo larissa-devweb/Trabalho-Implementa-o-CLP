@@ -44,10 +44,9 @@ apague os espaços antes de $(CC), $(PYTHON) e $(RM) e aperte a tecla Tab
 
 -Para a ponte entre o C e o Python ser construida, pela Biblioteca de Vínculo Dinâmico (DLL):
 
-2.  del mandelbrot.dll
-3.  gcc -O3 -shared -fPIC mandelbrot.c -o mandelbrot.dll
-4. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
-3. python main.py
+2.  gcc -O3 -shared -fPIC mandelbrot.c -o mandelbrot.dll
+3. gcc -O3 -shared mandelbrot.c -o mandelbrot.dll
+4. python main.py
 
 ## Se for compilar e der o primeiro erro, refaça:
 1. del mandelbrot.dll
