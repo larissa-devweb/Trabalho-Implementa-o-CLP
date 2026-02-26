@@ -1,4 +1,4 @@
-#Fractal de Mandelbrot
+# Fractal de Mandelbrot
 
 - Python: Interface gráfica
 - C: Cálculos matemáticos do fractal
